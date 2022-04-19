@@ -2,8 +2,7 @@ all: hello_world
 
 BUILD_DIR := "./build"
 
-$(BUILD_DIR):
-	mkdir -p $(BUILD_DIR)
+final_dir := $(shell mkdir -p $(BUILD_DIR))
 
 hello_world.o: hello_world.asm
 	yasm -f macho64 -o build/hello_world.o hello_world.asm
